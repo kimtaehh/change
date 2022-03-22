@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background-color: red;
+transition: all 1s;
+height: 2000px;
+margin: 0;
+}
+.bgcolor--blue{
+    transition: all 1s;
+    background-color: aquamarine;
+}
+.bgcolor--gray{
+    transition: 1s;
+    background-color: burlywood;
+}
+.bgcolor--img{background-image: url(/bg/bg.png)
+;background-repeat: no-repeat;
+transition: 1s;
+width: 100vh;
+height: 100vh;
+}
+.bth{
+    position: relative;
+    top: 60px;
+    width: 600px;
+    padding: 100px;
+    background-color: coral;
+    margin: auto;
+    text-align: center;
+}
+.button{
+    position: fixed;
+    padding: 10px;
+    background-color: darkcyan;
+    transition: 0.3s;
+}
+</style>
+<body class>
+    <div class="bg_img"></div>
+    <div class="btns">
+        <button class="btn_toggle">토글버튼</button>
+    <button class="btn_reset">색상리셋</button>
+<button class="btn_bggray">색상변경</button>
+<button class="btn_bgimg">이미지</button></div>
+<script>
+    
+    const btnBG =document.querySelector('.btn_toggle');
+      btnBG.addEventListener('click', function(){
+          document.body.classList.toggle('bgcolor--blue');
+          document.body.classList.remove('bgcolor--gray','bg--img');
+      });
+      const btnRe =document.querySelector('.btn_reset');
+      btnRe.addEventListener('click', function(){
+          document.body.classList.remove('bgcolor--blue' , 'bgcolor--gray', 'bgcolor--img');
+      });
+      const btnGr =document.querySelector('.btn_bggray');
+      btnGr.addEventListener('click',function(){
+          document.body.classList.add('bgcolor--gray');
+          document.body.classList.remove('bgcolor--blue', 'bgcolor--img');
+      });
+      const btnbgIm =document.querySelector('.btn_bgimg');
+      btnbgIm.addEventListener('click',function(){
+          document.body.classList.add('bgcolor--img');
+      });
+    
+</script>
+    
+</body>
+</html>
